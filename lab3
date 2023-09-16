@@ -1,0 +1,24 @@
+
+def parabolic_function(x):
+    return 4 * x**2
+
+def gradient(x):
+    return 8 * x
+
+def gradient_descent(learning_rate, iterations):
+    # Initial value of x
+    x = 10.0
+
+    for i in range(iterations):
+        grad = gradient(x)
+        x -= learning_rate * grad
+        print(f"Iteration {i+1}: x = {x}")
+
+    return x
+
+learning_rate = 0.1
+iterations = 100
+
+local_minimum = gradient_descent(learning_rate, iterations)
+print("Local minimum of the parabolic function: x =", local_minimum)
+print("Minimum value of the parabolic function: y =", parabolic_function(local_minimum))
